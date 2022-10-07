@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="my-5">Введите номер телефона</h1>
+    <form method="POST" class="needs-validation">
+        <div class="form-group">
+            <label for="numb">Номера</label>
+            <input type="text" size="40" name="numb" class="form-control is-invalid" value="{{ request.form.get('numb', '') }}">
+            <input type="submit" class="btn btn-primary mt-3" value="Отправить">
+            
+        {% if request.method == 'POST' %}
+            {% if result==False %}<div class="invalid-feedback">Вы не верно ввели номер</div>{% endif %}
+        {% endif %}
+        </div>
+    </form>
+{% endblock %}

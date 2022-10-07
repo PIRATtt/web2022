@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ post.title }}</h1>
+    <h4>{{ post.author }}, {{ post.date.strftime('%d.%m.%Y') }}</h4>
+    <img class="card-img-top img-thumbnail mx-auto d-block" src="{{ url_for('static', filename='images/' + post.image_id) }}" alt="Card image cap" style="height:80%; width:80%;">
+    <p class="card-text mt-4 mb-4">
+        {{ post.text }}
+    </p>
+    <section>
+        <div class="p-3 mb-2 bg-success text-white">Написать комментарий</div>
+        <div class="form-outline p-3 bg-light">
+            <div class="testareadiv" style="text-align:center;"><textarea style="width:1000px; height:150px;" rows="6" name="textarea" placeholder="Комментарий"></textarea></div>
+            <button type="button" class="mb-2 mt-2 btn btn-primary">Отправить</button>
+        </div>
+    </section>
+    <div class="comments d-flex mt-5">
+        <div class="d-flex justify-content-start">
+            <img src="{{ url_for('static', filename='images/avatar.jpg') }}" class="rounded-circle img-fluid d-block" alt="Sample Image" style="max-width:60px; max-height:60px;">
+        </div>
+        <div class="flex-grow-1 ms-3">
+            <h5>{{ post.comments[0]['author'] }}</h5>
+            <p>{{ post.comments[0]['text'] }}</p>
+            
+            <!-- Nested media object -->
+            <div class="d-flex mt-4">
+                <div class="d-flex justify-content-start">
+                    <img src="{{ url_for('static', filename='images/avatar.jpg') }}" class="rounded-circle img-fluid d-block" alt="Sample Image" style="max-width:60px; max-height:60px;">
+                </div>
+                <div class="flex-grow-1 ms-3">
+                    <h5>{{ post.comments[1]['author'] }}</h5>
+                    <p>{{ post.comments[0]['text'] }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
