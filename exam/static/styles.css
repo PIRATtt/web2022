@@ -1,0 +1,160 @@
+body {
+    font-family: 'Playfair Display', serif;
+}
+
+.logo-libary {
+    height: 70px;
+    margin-right: 10px;
+}
+
+/*.let_rec {*/
+/*    border-width: 1px!important;*/
+/*    border-radius: 5px!important;*/
+/*}*/
+
+.pagination > li > a
+{
+    background-color: white;
+    color: #5A4181;
+}
+
+.button_auth {
+    background-color: white;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover
+{
+    color: #5a5a5a;
+    background-color: #eee;
+    border-color: #ddd;
+}
+
+.pagination > .active > a
+{
+    color: white;
+    background-color: #5A4181 !Important;
+    border: solid 1px #5A4181 !Important;
+}
+
+.pagination > .active > a:hover
+{
+    background-color: #5A4181 !Important;
+    border: solid 1px #5A4181;
+}
+
+.header, .footer {
+    border-color: black!important;
+    border-width: 3px!important;
+}
+
+.books {
+    background-color: white;
+}
+
+.card-book {
+    border-color: black!important;
+    border-width: 5px!important;
+    border-radius: 5px!important;
+    background-color: ghostwhite;
+}
+
+.main-link {
+    text-decoration: none;
+    color: black;
+    font-family: 'Playfair Display', serif;
+    font-size: x-large;
+}
+.main-link:hover {
+    color: grey;
+
+}
+
+.book-cover {
+    min-width: 170px;
+    width: 98%;
+    height: 700px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px!important;
+    }
+
+.card-book-img {
+
+    border-width: 2px!important;
+    border-color: black!important;
+    font-size: x-large;
+}
+
+.card-book-buttons {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.button-primary {
+    width: 50%;
+}
+
+.button-danger {
+    width: 50%;
+}
+
+.show-img {
+    height: 750px;
+    width: 98%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-left: auto;
+}
+
+.genre-li {
+    background-color: white!important;
+    padding-left: 2px;
+    list-style-type: none!important;
+    border-left: solid;
+    border-left-width: 3px!important;
+    border-bottom-width: 3px!important;
+    border-radius: 3px!important;
+    border-color: grey!important;
+}
+
+.review-card {
+    background-color: ghostwhite!important;
+    border-width: 5px!important;
+    border-color: black!important;
+    border-radius: 5px!important;
+}
+
+.review-header {
+    border-color: black!important;
+    border-width: 3px!important;
+}
+
+.review-header-info {
+    border-color: black!important;
+    border-width: 3px!important;
+    text-align: start;
+}
+
+.review-header-info-data {
+    text-align: end;
+}
+
+.vr-genre {
+    border-right: solid!important;
+    border-color: black!important;
+    border-width: 2px!important;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.rate-card {
+    margin-right: 30px;
+}
+
