@@ -1,0 +1,52 @@
+{% macro render_user_form(url, roles, user={}) %}
+
+<form action="{{ url }}" method="POST">
+    <div class="form-group">
+        <label for="first_name" class="col-md-2 col-form-label">Имя</label>
+        <div class="col-md-6">
+            <input type="text" name="first_name" id="first_name" value="{{ user.first_name}}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="last_name" class="col-md-2 col-form-label">Фамилия</label>
+        <div class="col-md-6">
+            <input type="text" name="last_name" id="last_name" value="{{ user.last_name}}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="middle_name" class="col-md-2 col-form-label">Отчество</label>
+        <div class="col-md-6">
+            <input type="text" name="middle_name" id="middle_name" value="{{ user.middle_name or ''}}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="middle_name" class="col-md-2 col-form-label">Роль</label>
+        <div class="col-md-6">
+            <select name="role_id" id="role_id" class="form-contorl">
+                
+                <option value="" {% if user.role_id is none %} selected {% endif %}>Не выбрано</option>
+                {% for role in roles %}
+                    <option value="{{ role.id }}" {% if role.id == user.role_id %} selected {% endif %}>{{ role.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="login" class="col-md-2 col-form-label">Login</label>
+        <div class="col-md-6">
+            <input type="text" name="login" id="login" value="{{ user.login or ''}}">
+        </div>
+    </div>
+    {% if request.endpoint == 'new' %}
+    <div class="form-group">
+        <label for="password" class="col-md-2 col-form-label">Password</label>
+        <div class="col-md-6">
+            <input type="password" name="password" id="password" value="{{ user.password or ''}}">
+        </div>
+    </div>
+    {% endif %}
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary mt-2" value="Save">
+    </div>
+</form>
+{% endmacro %}
